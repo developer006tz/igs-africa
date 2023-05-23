@@ -2,7 +2,7 @@
    <div class="p-4  rounded-lg dark:border-gray-700">
       <div class="grid grid-cols-3 gap-4 mb-4">
          <div class="flex col-span-3 items-center justify-center h-12 rounded">
-            <p class="text-2xl text-gray-400 dark:text-gray-500">LIST OF IGS AFTICA STATIONS</p>
+            <p class="text-2xl text-gray-400 dark:text-gray-500">LIST OF IGS AFRICA STATIONS</p>
          </div>
       </div>
       <div class="flex items-center justify-center mb-4 rounded">
