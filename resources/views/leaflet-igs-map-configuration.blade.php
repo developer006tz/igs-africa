@@ -41,7 +41,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
             @foreach($stations as $station)
             var marker = L.marker([{{ $station->latitude }}, {{ $station->longitude }}],{icon: satelliteIcon}).addTo(map);
-            marker.bindPopup("<div style='color: green;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->name }}</div><div class='text-success'>Receiver: {{ $station->receiver_name }}</div><div class='text-success'>RSS: {{ $station->receiver_satellite_system }}</div><div class='text-success'>Antena: {{ $station->antenna_name }}</div><div class='text-success'>Clock: {{ $station->clock_type }}</div>");
+            marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->name }}</div><div class='text-success'>Receiver: {{ $station->receiver_name }}</div><div class='text-success'>RSS: {{ $station->receiver_satellite_system }}</div><div class='text-success'>Antena: {{ $station->antenna_name }}</div><div class='text-success'>Clock: {{ $station->clock_type }}</div>");
 
             @endforeach
 
