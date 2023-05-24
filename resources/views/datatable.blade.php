@@ -53,14 +53,14 @@ div#myTable_filter {
     margin-bottom: 30px;
 }
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
     .dt-buttons {
         margin-top:30px;
         border: 1px solid red;
         display: flex;
         flex-direction: column;
     }
-}
+} */
 
 </style>
 @endpush
