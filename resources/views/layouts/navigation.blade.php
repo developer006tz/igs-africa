@@ -20,17 +20,17 @@
                 <x-nav-dropdown title="Apps" align="right" width="48">
                         @can('view-any', App\Models\Igsstation::class)
                         <x-dropdown-link href="{{ route('igsstations.index') }}">
-                        IGS STATIONS
+                        Manage IGS Stations
                         </x-dropdown-link>
                         @endcan
                         @can('view-any', App\Models\Corsstation::class)
                         <x-dropdown-link href="{{ route('corsstations.index') }}">
-                        CORS STATION
+                        Manage CORS Stations
                         </x-dropdown-link>
                         @endcan
                         @can('view-any', App\Models\User::class)
                         <x-dropdown-link href="{{ route('users.index') }}">
-                        MANAGE USERS
+                        Manage Users
                         </x-dropdown-link>
                         @endcan
                         @can('view-any', App\Models\SystemDescription::class)
