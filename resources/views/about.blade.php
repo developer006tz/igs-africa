@@ -71,7 +71,7 @@
       <div class="flex items-center justify-center  mb-4 rounded  dark:bg-gray-800">
          <div class="text-center p-6">
   <h1 class="text-4xl font-bold mb-4">{{__('Welcome to IGS-CORS Africa')}} </h1>
-  <p class="text-lg mb-4">{{__('A website that showcases the IGS and CORS stations located in the African continent. This website was developed by PETRO AUGUSTINO KIRIA undergraduate student at Ardhi university, Tanzania under the supervision of Dr. ELIFURAHA SARIA in 2023')}}.</p>
+  <h2 class="text-lg mb-4">{{__('A website that showcases the IGS and CORS stations located in the African continent. This website was developed by PETRO AUGUSTINO KIRIA undergraduate student at Ardhi university, Tanzania under the supervision of Dr. ELIFURAHA SARIA in 2023')}}.</h2>
   <div class="bg-gray-100 p-4 rounded-md shadow-md">
     <h2 class="text-2xl font-semibold mb-2">{{__('What are IGS and CORS stations?')}} </h2>
     <p class="mb-2">{{__('IGS and CORS stations are GNSS stations that provide high-quality data and products for various scientific and practical applications. GNSS stands for Global Navigation Satellite System, which is a network of satellites that transmit signals to receivers on the ground')}}.</p>
