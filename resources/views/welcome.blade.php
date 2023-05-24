@@ -68,7 +68,7 @@
 {{-- content  --}}
 <div class="p-4 sm:mx-auto">
    <div class="p-4 rounded-lg dark:border-gray-700 mt-14">
-      <div class="grid grid-cols-3 gap-4 mb-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
          <div class="flex items-center justify-center h-12 rounded bg-white dark:bg-gray-800">
          </div>
          <div class="flex items-center justify-center h-12 rounded bg-transparent dark:bg-gray-800">
@@ -86,12 +86,12 @@
          </div>
 
       </div>
-      <div class="grid grid-cols-3 gap-4 mb-4">
+      <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
             
          <div id="map" class=" col-span-2 h-80 mb-4 rounded bg-gray-50 dark:bg-gray-800" style="height:30rem">
        
       </div>
-      <div class=" col-span-1 h-12 rounded bg-white dark:bg-gray-800">
+      <div class=" col-span-1 h-12 rounded bg-white sm:mb-16 dark:bg-gray-800">
                 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
