@@ -34,7 +34,7 @@
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <a href="https://flowbite.com/" class="flex items-center">
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IgsCords</span>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IgsCors</span>
   </a>
   <div class="flex md:order-2">
     {{-- check if the user is loged in to show dashboard button else login button --}}
@@ -80,7 +80,7 @@
 </button>
 <button class="relative w-full  inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
   <span class="relative px-5 w-full  py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-      Cords
+      Cors
   </span>
 </button>
          </div>
