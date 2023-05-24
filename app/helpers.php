@@ -54,7 +54,28 @@ function checkKeysExists($value, $keys_array = null)
             'longitude',
             'receiver_elevation_cutoff',
             'antenna_marker_up',
-            'clock_effective_dates') : $keys_array;
+            'clock_effective_dates',
+            'pnum',
+            'stntype',
+            'stnstatus',
+            'opstatus',
+            'sitecity',
+            'sitestate',
+            'region',
+            'elevation',
+            'project',
+            'network',
+            'multi_types',
+            'is_realtime',
+            'mean_latency_last_hour',
+            'mean_latency_last_day',
+            'data_complete_last_hour',
+            'data_complete_last_day',
+            'status',
+            'date_installed',
+            'last_rinex_data_year',
+            'data_download_link',
+            ) : $keys_array;
         $data = array_change_key_case(array_shift($value), CASE_LOWER);
         $keys = str_replace(' ', '_', array_keys($data));
         $results = array_combine($keys, array_values($data));
