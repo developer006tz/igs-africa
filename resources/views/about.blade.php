@@ -68,27 +68,26 @@
       <div class="flex items-center justify-center h-12 mb-4 rounded">
          <p class="text-2xl text-gray-400 dark:text-gray-500">+</p>
       </div>
-      <div class="flex items-center justify-center  mb-4 rounded bg-gray-50 dark:bg-gray-800">
+      <div class="flex items-center justify-center  mb-4 rounded  dark:bg-gray-800">
          <div class="text-center p-6">
-  <h1 class="text-4xl font-bold mb-4">Welcome to IGS-CORS Africa</h1>
-  <p class="text-lg mb-4">A website that showcases the IGS and CORS stations located in the African continent.</p>
+  <h1 class="text-4xl font-bold mb-4">{{__('Welcome to IGS-CORS Africa')}} </h1>
+  <p class="text-lg mb-4">{{__('A website that showcases the IGS and CORS stations located in the African continent. This website was developed by PETRO AUGUSTINO KIRIA undergraduate student at Ardhi university, Tanzania under the supervision of Dr. ELIFURAHA SARIA in 2023')}}.</p>
   <div class="bg-gray-100 p-4 rounded-md shadow-md">
-    <h2 class="text-2xl font-semibold mb-2">What are IGS and CORS stations?</h2>
-    <p class="mb-2">IGS and CORS stations are GNSS stations that provide high-quality data and products for various scientific and practical applications. GNSS stands for Global Navigation Satellite System, which is a network of satellites that transmit signals to receivers on the ground.</p>
-    <p>These signals can be used to determine the position, velocity, and time of the receivers, as well as other parameters related to the Earth and its environment. Some of the applications of GNSS data include surveying, mapping, navigation, agriculture, disaster management, weather forecasting, climate monitoring, space exploration, and geophysical research.</p>
+    <h2 class="text-2xl font-semibold mb-2">{{__('What are IGS and CORS stations?')}} </h2>
+    <p class="mb-2">{{__('IGS and CORS stations are GNSS stations that provide high-quality data and products for various scientific and practical applications. GNSS stands for Global Navigation Satellite System, which is a network of satellites that transmit signals to receivers on the ground')}}.</p>
+    <p> {{__('These signals can be used to determine the position, velocity, and time of the receivers, as well as other parameters related to the Earth and its environment. Some of the applications of GNSS data include surveying, mapping, navigation, agriculture, disaster management, weather forecasting, climate monitoring, space exploration, and geophysical research.')}} </p>
   </div>
-  <div class="mt-4 shadow-md">
-    <h2 class="text-2xl font-semibold mb-2">What can you find on this website?</h2>
-    <p class="mb-2">On this website, you can find information on the IGS and CORS stations in Africa, such as their locations, coordinates, equipment, data availability, and contact details. You can also access their data and products through links to their respective websites or FTP servers.</p>
-    <p>Moreover, you can view the stations on a map and filter them by country, network, or type. For example, you can select only the stations that belong to the IGS network or only the stations that provide data in real-time.</p>
+  <div class="mt-4 bg-gray-100 p-4 rounded-md shadow-md">
+    <h2 class="text-2xl font-semibold mb-2">{{__('What can you find on this website?')}} </h2>
+    <p class="mb-2"> {{__('On this website, you can find information on the IGS and CORS stations in Africa, such as their locations, coordinates, equipment, data availability, and contact details. You can also access their data and products through links to their respective websites or FTP servers.')}} </p>
+    <p>{{__('Moreover, you can view the stations on a map and filter them by country, network, or type. For example, you can select only the stations that belong to the IGS network or only stations that provide data in real-time.')}} </p>
   </div>
-  <div class="mt-4 shadow-md">
-    <h2 class="text-2xl font-semibold mb-2">Our mission</h2>
-    <p>This website aims to promote the use and awareness of the IGS and CORS stations in Africa, as well as to support the development of geodetic infrastructure and research in the region. Geodesy is the science of measuring and modeling the shape, size, gravity field, and rotation of the Earth.</p>
-    <p>Geodesy is essential for understanding many natural phenomena and human activities that affect our planet, such as plate tectonics, earthquakes, volcanoes, sea level change, water cycle, land subsidence, glacial rebound, and crustal deformation. Whether you are a scientist, an engineer, a student or a curious citizen, you will find useful and interesting information on this website.</p>
+  <div class="mt-4 bg-gray-100 p-4 rounded-md shadow-md">
+    <h2 class="text-2xl font-semibold mb-2">{{__('Our mission')}} </h2>
+    <p>{{__('This website aims to provide unified African Geodetic Reference Frame CORS-IGS information\'s which will help to promote international collaboration and the exchange of information between geodetic organizations and experts, to support the sustainable development of geodetic infrastructure and geospatial technology in the region, and to support other geospatial applications, such as satellite navigation, remote sensing, and geo-hazard monitoring.')}} </p>
   </div>
   <div class="mt-4">
-    <p>Feel free to explore and contact us if you have any questions or feedback.</p>
+    <p>{{__('Feel free to explore and contact us if you have any questions or feedback.')}} </p>
   </div>
 </div>
 
