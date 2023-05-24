@@ -34,7 +34,7 @@
                         <div class="md:w-1/2 text-right">
                             @can('create', App\Models\Igsstation::class)
                             <a
-                                href="{{ route('igsstations.create') }}"
+                                href="{{ route('igsstations.create_excel') }}"
                                 class="button button-primary"
                             >
                                 <i class="mr-1 icon ion-md-add"></i>

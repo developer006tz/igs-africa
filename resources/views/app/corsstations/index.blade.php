@@ -34,6 +34,13 @@
                         <div class="md:w-1/2 text-right">
                             @can('create', App\Models\Corsstation::class)
                             <a
+                                href="{{ route('corsstations.create_excel') }}"
+                                class="button button-primary"
+                            >
+                                <i class="mr-1 icon ion-md-add"></i>
+                                upload by excell
+                            </a>
+                            <a
                                 href="{{ route('corsstations.create') }}"
                                 class="button button-primary"
                             >
