@@ -1,12 +1,15 @@
 <!doctype html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'IGS') }}</title>
+    <title>{{ __('Welcome to IGS-CORS Africa') }}</title>
+    <meta name="description" content="IGS-CORS Africa showcases the IGS and CORS stations located in the African continent. Developed by PETROAUGUSTINO KIRIA at Ardhi university, Tanzania under the supervision of Dr. ELIFURAHA SARIA in 2023.">
+    <meta name="keywords" content="IGS, CORS, Africa, GNSS, geodetic reference frame">
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('favicon.ico')}}">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
     <!-- FONTS -->
@@ -34,7 +37,7 @@
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <a href="https://flowbite.com/" class="flex items-center">
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IgsCords</span>
+      <h1 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IGS STATIONS</h1>
   </a>
   <div class="flex md:order-2">
     {{-- check if the user is loged in to show dashboard button else login button --}}
@@ -98,7 +101,7 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                   <b class="text-3xl text-gray-900 dark:text-white"> IGS AFRICA STATIONS</b>
+                   <h2 class="text-2xl text-gray-900 dark:text-white">SUMMARY OF  IGS AFRICA STATIONS</h2>
                 </th>
                 <th scope="col" class="px-6 py-3">
                     

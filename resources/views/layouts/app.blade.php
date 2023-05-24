@@ -3,9 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('favicon.ico')}}">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+         <meta name="description" content="IGS-CORS Africa showcases the IGS and CORS stations located in the African continent. Developed by PETROAUGUSTINO KIRIA at Ardhi university, Tanzania under the supervision of Dr. ELIFURAHA SARIA in 2023.">
+        <meta name="keywords" content="IGS, CORS, Africa, GNSS, geodetic reference frame">
+        <meta name="robots" content="index,follow">
         
-        <title>igsafrica</title>
+        <title>IGS Africa - Admin dashboard </title>
         
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">

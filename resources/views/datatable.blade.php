@@ -54,8 +54,9 @@ div#myTable_filter {
 }
 
 @media (min-width: 640px) {
-    #myTable_wrapper .dt-buttons {
+    .dt-buttons {
         margin-top:30px;
+        border: 1px solid red;
         display: flex;
         flex-direction: column;
     }
