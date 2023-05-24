@@ -21,7 +21,7 @@ $user = App\Models\User::whereHas('roles', function ($query) {
 <div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-20 right-20 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full" style="z-index: 10000;">
   <div class="relative top-2 mx-auto p-5 w-1/2 bordermax-w-2xl max-h-full shadow-lg  bg-white rounded overflow-hidden ">
             <div class="mt-3 text-center">
-                <div class="mx-auto flex items-center justify-center ">
+                {{--<div class="mx-auto flex items-center justify-center ">
                     <img class=" rounded-full" src="{{asset('profile.jpeg')}}" alt="profile photo" width="300" height="300">
                 </div>
                 <h3 class="text-lg leading-6 font-medium text-gray-900">{{$modal['name']}}</h3>
@@ -42,7 +42,7 @@ $user = App\Models\User::whereHas('roles', function ($query) {
                         OK
                     </button>
                 </div>
-            </div>
+            </div>--}}
         </div>
 </div>
 </div>
