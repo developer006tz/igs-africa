@@ -17,7 +17,7 @@
                     </x-nav-link>
                 </div>
 
-                <x-nav-dropdown title="Apps" align="right" width="48">
+                <x-nav-dropdown title="Modules" align="right" width="48">
                         @can('view-any', App\Models\Igsstation::class)
                         <x-dropdown-link href="{{ route('igsstations.index') }}">
                         Manage IGS Stations
