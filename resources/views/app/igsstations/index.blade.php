@@ -38,8 +38,16 @@
                                 class="button button-primary"
                             >
                                 <i class="mr-1 icon ion-md-add"></i>
+                                upload by excell
+                            </a>
+                            <a
+                                href="{{ route('igsstations.create') }}"
+                                class="button button-primary"
+                            >
+                                <i class="mr-1 icon ion-md-add"></i>
                                 @lang('crud.common.create')
                             </a>
+                            
                             @endcan
                         </div>
                     </div>
