@@ -36,6 +36,8 @@
                     <th scope="col" class="px-6 py-3" >Receiver Elevation Cutoff</th>
                     <th scope="col" class="px-6 py-3" >Antenna Marker Up</th>
                     <th scope="col" class="px-6 py-3" >Clock Effective Dates</th>
+                    <th scope="col" class="px-6 py-3" >Data Download link</th>
+                    <th scope="col" class="px-6 py-3" >Country</th>
             </tr>
         </thead>
         <tbody>
@@ -45,30 +47,32 @@
                 @forelse ($stations as $station)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td >{{ $i++ }}</td>
-                    <td class="px-6 py-4">{{ $station->name }}</td>
-                    <td class="px-6 py-4">{{ $station->x_axis }}</td>
-                    <td class="px-6 py-4">{{ $station->y_axis }}</td>
-                    <td class="px-6 py-4">{{ $station->z_axis }}</td>
-                    <td class="px-6 py-4">{{ $station->latitude }}</td>
-                    <td class="px-6 py-4">{{ $station->height }}</td>
-                    <td class="px-6 py-4">{{ $station->receiver_name }}</td>
-                    <td class="px-6 py-4">{{ $station->receiver_satellite_system }}</td>
-                    <td class="px-6 py-4">{{ $station->receiver_serial_number }}</td>
-                    <td class="px-6 py-4">{{ $station->receiver_firmware_version }}</td>
-                    <td class="px-6 py-4">{{ $station->receiver_date_installed }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_name }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_radome }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_serial_number }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_arp }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_marker_north }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_marker_east }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_date_installed }}</td>
-                    <td class="px-6 py-4">{{ $station->clock_type }}</td>
-                    <td class="px-6 py-4">{{ $station->clock_input_frequency }}</td>
-                    <td class="px-6 py-4">{{ $station->longitude }}</td>
-                    <td class="px-6 py-4">{{ $station->receiver_elevation_cutoff }}</td>
-                    <td class="px-6 py-4">{{ $station->antenna_marker_up }}</td>
-                    <td class="px-6 py-4">{{ $station->clock_effective_dates }}</td>
+                    <td class="px-6 py-4">{{ $station->name ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->x_axis ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->y_axis ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->z_axis ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->latitude ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->height ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->receiver_name ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->receiver_satellite_system ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->receiver_serial_number ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->receiver_firmware_version ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->receiver_date_installed ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_name ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_radome ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_serial_number ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_arp ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_marker_north ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_marker_east ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_date_installed ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->clock_type ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->clock_input_frequency ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->longitude ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->receiver_elevation_cutoff ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->antenna_marker_up ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->clock_effective_dates ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->data_download_link?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $station->country ?? '-' }}</td>
             </tr>
             @empty
             <tr>
