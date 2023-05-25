@@ -265,4 +265,26 @@
             placeholder="Clock Effective Dates"
         ></x-inputs.text>
     </x-inputs.group>
+
+    <x-inputs.group class="w-full">
+        <x-inputs.text
+            name="data_download_link"
+            label="Data Download Link"
+            :value="old('data_download_link', ($editing ? $igsstation->data_download_link : ''))"
+            maxlength="255"
+            placeholder="Data Download Link"
+        ></x-inputs.text>
+    </x-inputs.group>
+
+    <x-inputs.group class="w-full">
+        <x-inputs.text
+            name="country"
+            label="Country"
+            :value="old('country', ($editing ? $igsstation->country : ''))"
+            maxlength="255"
+            placeholder="Country"
+        ></x-inputs.text>
+    </x-inputs.group>
+
+
 </div>

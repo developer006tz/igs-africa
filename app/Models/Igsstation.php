@@ -36,6 +36,9 @@ class Igsstation extends Model
         'receiver_elevation_cutoff',
         'antenna_marker_up',
         'clock_effective_dates',
+        'data_download_link',
+        'country',
+        
     ];
 
     protected $searchableFields = ['*'];

@@ -63,7 +63,7 @@ return new class extends Migration {
             $table
                 ->enum('status', [
                     'ok',
-                    'unavilable',
+                    'unavailable',
                     'non-operational',
                     'failed',
                     'other',

@@ -44,6 +44,11 @@ class IgsstationStoreRequest extends FormRequest
             'receiver_elevation_cutoff' => ['nullable', 'numeric'],
             'antenna_marker_up' => ['required', 'numeric'],
             'clock_effective_dates' => ['nullable', 'max:255', 'string'],
+            'data_download_link' => ['nullable', 'max:255', 'string'],
+            'country' => ['nullable', 'max:255', 'string'],
+
+
+
         ];
     }
 }

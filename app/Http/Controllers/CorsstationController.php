@@ -73,30 +73,28 @@ class CorsstationController extends Controller
         $status = checkKeysExists(
             $data,
             array(
-                'name',
-                'x_axis',
-                'y_axis',
-                'z_axis',
+                'pnum',
+                'stntype',
+                'stnstatus',
+                'opstatus',
+                'sitecity',
+                'sitestate',
+                'region',
                 'latitude',
-                'height',
-                'receiver_name',
-                'receiver_satellite_system',
-                'receiver_serial_number',
-                'receiver_firmware_version',
-                'receiver_date_installed',
-                'antenna_name',
-                'antenna_radome',
-                'antenna_serial_number',
-                'antenna_arp',
-                'antenna_marker_north',
-                'antenna_marker_east',
-                'antenna_date_installed',
-                'clock_type',
-                'clock_input_frequency',
                 'longitude',
-                'receiver_elevation_cutoff',
-                'antenna_marker_up',
-                'clock_effective_dates'
+                'elevation',
+                'project',
+                'network',
+                'multi_types',
+                'is_realtime',
+                'mean_latency_last_hour',
+                'mean_latency_last_day',
+                'data_complete_last_hour',
+                'data_complete_last_day',
+                'status',
+                'date_installed',
+                'last_rinex_data_year',
+                'data_download_link',
             )
         );
 
@@ -104,21 +102,21 @@ class CorsstationController extends Controller
             // validate
             $stations = [];
             foreach ($data as $element) {
-                $stations[] = $element['name'];
+                $stations[] = $element['pnum'];
             }
 
             $invalidNames = [];
             $count_invalid = 0;
             foreach ($stations as $index => $name) {
                 $trimed_stations = trim($name);
-                $station = Corsstation::where('name', $trimed_stations)->first();
+                $station = Corsstation::where('pnum', $trimed_stations)->first();
 
                 if (!empty($station)) {
                     $invalidNames[] = $index;
                     $count_invalid++;
                 }
             }
-            if (count($invalidNames) > 0) {
+        /*    if (count($invalidNames) > 0) {
                 $invalidNamesStr = implode(', ', array_map(function ($index) use ($stations) {
                     return '"' . $stations[$index] . '", at row ' . ($index + 2);
                 }, $invalidNames));
@@ -133,19 +131,37 @@ class CorsstationController extends Controller
                 return redirect()->route('corsstations.create_excel')->with('error', $errorMessage);
                 exit;
             }
-
+*/
             // end validate
-            $station_count = 0;
+            $added_stations = 0;
+            $exists_stations = 0;
+
+            
             foreach ($data as  $value) {
-                $corsstations = Corsstation::create($value);
-                $station_count++;
+                if (empty($station)){
+                    if (isset($value['status'])) {
+                        $value['status'] = str_replace(['status ','status','status-'],'', strtolower(trim($value['status']))) ;
+                    }
+                   $corsstations = Corsstation::create($value);
+                $added_stations++; 
+                }else{
+                    $exists_stations++;
+                }
+                
             }
         } else {
             return redirect()->route('corsstations.create_excel')->with('error', $status);
         }
-        if ($station_count > 0) {
-            return redirect()->route('corsstations.index', $corsstations)->withSuccess($station_count . ' Station(s) added successfully');
-        } else {
+        if ($added_stations > 0  && $exists_stations == 0) {
+            return redirect()->route('corsstations.index', $corsstations)->withSuccess($added_stations . ' Station(s) added successfully');
+        }else
+        if ($added_stations > 0  && $exists_stations > 0) {
+            return redirect()->route('corsstations.index', $corsstations)->withSuccess($added_stations . ' Station(s) added successfully and ' . $exists_stations . ' Station(s) already exists');
+        } else
+        if ($added_stations == 0  && $exists_stations > 0) {
+            return redirect()->route('corsstations.index', $corsstations)->withSuccess($exists_stations . ' Station(s) already exists');
+        }
+        else {
             return redirect()->route('corsstations.index')->with('error', 'No Station added');
         }
     }

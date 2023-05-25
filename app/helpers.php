@@ -27,59 +27,20 @@ function activeMenuMultipleArray($urls)
     }
 }
 
-function checkKeysExists($value, $keys_array = null)
+function checkKeysExists($value, $keys_array)
     {
 
-        $required = $keys_array == null ? array(
-            'name',
-            'x_axis',
-            'y_axis',
-            'z_axis',
-            'latitude',
-            'height',
-            'receiver_name',
-            'receiver_satellite_system',
-            'receiver_serial_number',
-            'receiver_firmware_version',
-            'receiver_date_installed',
-            'antenna_name',
-            'antenna_radome',
-            'antenna_serial_number',
-            'antenna_arp',
-            'antenna_marker_north',
-            'antenna_marker_east',
-            'antenna_date_installed',
-            'clock_type',
-            'clock_input_frequency',
-            'longitude',
-            'receiver_elevation_cutoff',
-            'antenna_marker_up',
-            'clock_effective_dates',
-            'pnum',
-            'stntype',
-            'stnstatus',
-            'opstatus',
-            'sitecity',
-            'sitestate',
-            'region',
-            'elevation',
-            'project',
-            'network',
-            'multi_types',
-            'is_realtime',
-            'mean_latency_last_hour',
-            'mean_latency_last_day',
-            'data_complete_last_hour',
-            'data_complete_last_day',
-            'status',
-            'date_installed',
-            'last_rinex_data_year',
-            'data_download_link',
-            ) : $keys_array;
+        $required = $keys_array;
         $data = array_change_key_case(array_shift($value), CASE_LOWER);
-        $keys = str_replace(' ', '_', array_keys($data));
-        $results = array_combine($keys, array_values($data));
+    // Trim the keys of the $data array
+        $keys = array_map('trim', array_keys($data));
 
+        // Replace characters with underscores
+        $keys = str_replace(['', '-', ' '], '_', $keys);
+
+        
+        $results = array_combine($keys, array_values($data));
+    
         if (count(array_intersect_key(array_flip($required), $results)) === count($required)) {
             //All required keys exist!
             $status = 1;

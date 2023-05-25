@@ -36,6 +36,8 @@ return new class extends Migration {
             $table->integer('receiver_elevation_cutoff')->nullable();
             $table->decimal('antenna_marker_up', 8, 2);
             $table->string('clock_effective_dates')->nullable();
+            $table->string('data_download_link')->nullable();
+            $table->string('country')->nullable();
 
             $table->timestamps();
         });
