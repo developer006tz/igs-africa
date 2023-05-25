@@ -114,35 +114,50 @@ class IgsstationController extends Controller
                     $count_invalid++;
                 }
             }
-            if (count($invalidNames) > 0) {
-                $invalidNamesStr = implode(', ', array_map(function ($index) use ($stations) {
-                    return '"' . $stations[$index] . '", at row ' . ($index + 2);
-                }, $invalidNames));
+            // if (count($invalidNames) > 0) {
+            //     $invalidNamesStr = implode(', ', array_map(function ($index) use ($stations) {
+            //         return '"' . $stations[$index] . '", at row ' . ($index + 2);
+            //     }, $invalidNames));
 
-                if (count($invalidNames) == 1) {
-                    $errorMessage = "In Your Uploaded Sheet you have " . $count_invalid . " Stations which  EXIST in your system it have value" . $invalidNamesStr . " , of your Uploaded Excel sheet , make sure you Upload new Stations which does not Exists in your System";
-                } else {
-                    $errorMessage = "In Your Uploaded Sheet you have " . $count_invalid . " Stations which  EXIST in your system they have values of " . $invalidNamesStr . " , of your Uploaded Excel sheet ,  make sure you Upload new Stations which does not Exists in your System";
-                }
+            //     if (count($invalidNames) == 1) {
+            //         $errorMessage = "In Your Uploaded Sheet you have " . $count_invalid . " Stations which  EXIST in your system it have value" . $invalidNamesStr . " , of your Uploaded Excel sheet , make sure you Upload new Stations which does not Exists in your System";
+            //     } else {
+            //         $errorMessage = "In Your Uploaded Sheet you have " . $count_invalid . " Stations which  EXIST in your system they have values of " . $invalidNamesStr . " , of your Uploaded Excel sheet ,  make sure you Upload new Stations which does not Exists in your System";
+            //     }
 
 
-                return redirect()->route('igsstations.create_excel')->with('error', $errorMessage);
-                exit;
-            }
+            //     return redirect()->route('igsstations.create_excel')->with('error', $errorMessage);
+            //     exit;
+            // }
 
             // end validate
-            $station_count = 0;
+            $added_stations = 0;
+            $existing = 0;
             foreach ($data as  $value) {
-                $igsstation= Igsstation::create($value);
-                $station_count++;
+                if(empty($station)){
+                     if (isset($value['clock_input_frequency'])) {
+                    $value['clock_input_frequency'] = str_replace(['N/A ', 'NA', 'NA-', ' N / A', 'n/a'], 0, strtolower(trim($value['clock_input_frequency'])));
+                }
+                    $igsstations= Igsstation::create($value);
+                    $added_stations++;
+                }else{
+                    $existing++;
+                }
+               
             }
         } else {
             return redirect()->route('igsstations.create_excel')->with('error', $status);
         }
-        if ($station_count > 0) {
-            return redirect()->route('igsstations.index', $igsstation)->withSuccess($station_count . ' Station(s) added successfully');
-        } else {
-            return redirect()->route('igsstations.index')->with('error', 'No Station added');
+        if ($added_stations > 0  && $existing == 0) {
+            return redirect()->route('igsstations.index', $igsstations)->withSuccess($added_stations . ' Station(s) added successfully');
+        } else
+        if ($added_stations > 0  && $existing > 0) {
+            return redirect()->route('igsstations.index', $igsstations)->withSuccess($added_stations . ' Station(s) added successfully and ' . $existing . ' Station(s) already exists');
+        } else
+        if ($added_stations == 0  && $existing > 0) {
+            return redirect()->route('igsstations.index')->withSuccess($existing . ' Station(s) already exists');
+        }else{
+            return redirect()->route('igsstations.index', $igsstations)->withSuccess('No Station(s) added');
         }
 
     }

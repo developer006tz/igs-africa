@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->string('name');
             $table->decimal('x_axis', 11, 4);
             $table->decimal('y_axis', 11, 4);
-            $table->decimal('z_axiz', 11, 4);
-            $table->float('latitude', 10, 7);
+            $table->decimal('z_axiz', 11, 4)->nullable();
+            $table->float('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7);
             $table->decimal('height', 10, 2);
             $table->string('receiver_name');
