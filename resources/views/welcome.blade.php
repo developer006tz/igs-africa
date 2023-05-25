@@ -130,7 +130,7 @@
                     Dormant stations
                 </th>
                 <td class="px-6 py-4">
-                    {{count($stations)}}
+                    {{__('0')}}
                 </td>
             </tr>
            
