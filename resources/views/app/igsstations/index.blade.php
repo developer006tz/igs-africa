@@ -129,7 +129,13 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.igsstations.inputs.clock_effective_dates')
                                 </th>
-                                <th></th>
+                                <th class="px-4 py-3 text-left">
+                                    data download link
+                                </th>
+                                <th class="px-4 py-3 text-left">
+                                    country
+                                </th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="text-gray-600">
@@ -216,6 +222,14 @@
                                 </td>
                                 <td class="px-4 py-3 text-left">
                                     {{ $igsstation->clock_effective_dates ?? '-'
+                                    }}
+                                </td>
+                                 <td class="px-4 py-3 text-left">
+                                    {{ $igsstation->data_download_link ?? '-'
+                                    }}
+                                </td>
+                                 <td class="px-4 py-3 text-left">
+                                    {{ $igsstation->country ?? '-'
                                     }}
                                 </td>
                                 <td

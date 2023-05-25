@@ -191,6 +191,26 @@
                             }}</span
                         >
                     </div>
+
+                     <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
+                           Data download link
+                        </h5>
+                        <span
+                            >{{ $igsstation->data_download_link ?? '-'
+                            }}</span
+                        >
+                    </div>
+
+                     <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
+                           Country
+                        </h5>
+                        <span
+                            >{{ $igsstation->country ?? '-'
+                            }}</span
+                        >
+                    </div>
                 </div>
 
                 <div class="mt-10">
