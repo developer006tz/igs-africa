@@ -19,6 +19,8 @@
             @elseif(request()->routeIs('cors.index'))
             @php
             $stations_points = $corsstations;
+            //on-operation cords stations
+            $dormant = \App\Models\CorsStation::where('status', '<>', 'ok')->count();
             @endphp
             @else
             @php
@@ -41,14 +43,16 @@
                     {{count($stations_points)}}
                 </td>
             </tr>
+            @if (request()->routeIs('cors.index'))
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     Dormant stations
                 </th>
                 <td class="px-6 py-4">
-                    {{__('0')}}
+                    {{$dormant}}
                 </td>
             </tr>
+            @endif
            
         </tbody>
     </table>
