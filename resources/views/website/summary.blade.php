@@ -14,17 +14,20 @@
         <tbody>
             @if (request()->routeIs('igs.index'))
             @php
-            $stations_points = $igsstations;
+            $stations_points = count($igsstations);
             @endphp
             @elseif(request()->routeIs('cors.index'))
             @php
-            $stations_points = $corsstations;
+            $stations_points = count($corsstations);
             //on-operation cords stations
             $dormant = \App\Models\CorsStation::where('status', '<>', 'ok')->count();
+
+            $active_stations = (int) $stations_points - (int) $dormant;
+
             @endphp
             @else
             @php
-            $stations_points = $igsstations;
+            $stations_points = count($igsstations);
             @endphp
             @endif
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -32,7 +35,7 @@
                     Total number of stations
                 </th>
                 <td class="px-6 py-4">
-                    {{count($stations_points)}}
+                    {{$stations_points}}
                 </td>
             </tr>
              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -40,7 +43,11 @@
                     Active stations
                 </th>
                 <td class="px-6 py-4">
-                    {{count($stations_points)}}
+                    @if (request()->routeIs('cors.index'))
+                    {{$active_stations}}
+                    @else
+                    {{$stations_points}}
+                    @endif
                 </td>
             </tr>
             @if (request()->routeIs('cors.index'))
