@@ -9,6 +9,7 @@ use App\Http\Controllers\IgsstationController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\CorsstationController;
 use App\Http\Controllers\SystemDescriptionController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,26 @@ use App\Http\Controllers\SystemDescriptionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    
+    $stations = getStations();
+    return view('igsstations', $stations);
+})->name('website.index');
 
 Route::get('about', function () {
     return view('about');
 });
+
+//return a website igsstations
+
+
+Route::get('/igs', [Controller::class, 'igsstations'])->name(
+    'igs.index'
+);
+
+
+Route::get('/cors', [Controller::class, 'corsstations'])->name(
+    'cors.index'
+);
 
 
 Route::middleware(['auth'])

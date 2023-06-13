@@ -28,10 +28,27 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	// });
 	// googleSat.addTo(map);
 
+    @if(Route::currentRouteName() == 'igs.index')
+            var iconimage = 'https://img.icons8.com/fluency/48/null/approval.png';
+            @php 
+            $stations = $igsstations; 
+            @endphp
+            @elseif(Route::currentRouteName() == 'cors.index')
+            var iconimage = 'https://img.icons8.com/stencil/32/power-plant.png';
+            @php
+            $stations = $corsstations;
+            @endphp
+            @elseif(Route::currentRouteName() == 'website.index')
+            var iconimage = 'https://img.icons8.com/fluency/48/null/approval.png';
+            @php
+            $stations = $igsstations;
+            @endphp
+    @endif
+
        
 
         var satelliteIcon = L.icon({
-                iconUrl: 'https://img.icons8.com/fluency/48/null/approval.png',
+                iconUrl: iconimage,
                 shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
                 iconSize: [13, 15],
                 iconAnchor: [12, 41],
@@ -39,6 +56,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 shadowSize: [10, 10]
             });
 
+            //check route if it is igs or cors
+            //if igs then show igs stations
+            //if cors then show cors stations
+            //if both then show both stations
+            //if none then show none
+
+            
             @foreach($stations as $station)
             var marker = L.marker([{{ $station->latitude }}, {{ $station->longitude }}],{icon: satelliteIcon}).addTo(map);
             marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->name }}</div><div class='text-success'>Receiver: {{ $station->receiver_name }}</div><div class='text-success'>RSS: {{ $station->receiver_satellite_system }}</div><div class='text-success'>Antena: {{ $station->antenna_name }}</div><div class='text-success'>Clock: {{ $station->clock_type }}</div>");

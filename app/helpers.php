@@ -112,5 +112,17 @@ if (!function_exists('uploadExcel')) {
         }
         unlink($path);
     }
+
+
+    if (!function_exists('getStations')) {
+    function getStations()
+    {
+        $igsstations =  \App\Models\Igsstation::all();
+        $corsstations = \App\Models\Corsstation::all();
+
+        return compact('igsstations', 'corsstations');
+    }
+
+    }
 }
 

@@ -2,7 +2,7 @@
    <div class="p-4  rounded-lg dark:border-gray-700">
         <div class="grid grid-cols-3 gap-4 mb-4">
          <div class="flex col-span-3 items-center justify-center h-12 rounded">
-            <h2 class="text-2xl text-gray-400 dark:text-gray-500">LIST OF IGS AFRICA STATIONS</h2>
+            <h2 class="text-2xl text-gray-400 dark:text-gray-500">LIST OF @yield('heading') IN AFRICA</h2>
          </div>
       </div>
       <div class="flex items-center justify-center mb-4 rounded">
@@ -44,7 +44,7 @@
              @php
                     $i = 1;
                 @endphp
-                @forelse ($stations as $station)
+                @forelse ($igsstations as $station)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td >{{ $i++ }}</td>
                     <td class="px-6 py-4">{{ $station->name ?? '-' }}</td>
@@ -71,7 +71,7 @@
                     <td class="px-6 py-4">{{ $station->receiver_elevation_cutoff ?? '-' }}</td>
                     <td class="px-6 py-4">{{ $station->antenna_marker_up ?? '-' }}</td>
                     <td class="px-6 py-4">{{ $station->clock_effective_dates ?? '-' }}</td>
-                    <td class="px-6 py-4">{{ $station->data_download_link?? '-' }}</td>
+                    <td class="px-6 py-4 text-blue-600"><a class="text-blue-600" href="{{ $station->data_download_link?? '-' }}">{{ $station->data_download_link?? '-' }}</a></td>
                     <td class="px-6 py-4">{{ $station->country ?? '-' }}</td>
             </tr>
             @empty
