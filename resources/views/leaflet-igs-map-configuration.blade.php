@@ -34,7 +34,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             $stations = $igsstations; 
             @endphp
             @elseif(Route::currentRouteName() == 'cors.index')
-            var iconimage = 'https://img.icons8.com/stencil/32/power-plant.png';
+            var iconimage = 'https://img.icons8.com/fluency/48/null/approval.png';
             @php
             $stations = $corsstations;
             @endphp
@@ -66,10 +66,26 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             @foreach($stations as $station)
             var marker = L.marker([{{ $station->latitude }}, {{ $station->longitude }}],{icon: satelliteIcon}).addTo(map);
             @if(request()->routeIs('igs.index'))
-            marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->name }}</div><div class='text-success'>Location: {{ $station->country ?? '-' }}</div><div class='text-success'>MC: {{ $station->receiver_satellite_system ?? '-' }}</div><div class='text-success'>Data link:<a href='{{ $station->data_download_link ?? route('igs.index') }}' >{{ $station->data_download_link ?? '-' }}</a> </div>");
+            marker.bindPopup(`
+                <div class="bg-green-500 text-white font-bold p-3 text-center rounded">
+                    {{ $station->name }}
+                </div>
+                <div class="text-green-900 mt-2">
+                    Location:-  {{ $station->country ?? '-' }}
+                </div>
+                <div class="text-green-900">
+                    MC:-  {{ $station->receiver_satellite_system ?? '-' }}
+                </div>
+                <div class="text-green-900">
+                    Data link:
+                    <a class="text-green-900 hover:text-green-700" href="{{ $station->data_download_link ?? route('igs.index') }}" target="_blank">
+                        {{ $station->data_download_link ?? '-' }}
+                    </a>
+                </div>
+            `);
             @endif
             @if(request()->routeIs('cors.index'))
-            marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->pnum ?? '-' }}</div><div class='text-success'>Location: {{ $station->sitestate ?? '-' }}</div><div class='text-success'>MC: {{ $station->multi_types ?? '-' }}</div><div class='text-success'>Data link:<a href='{{ $station->data_download_link ?? route('cors.index') }}' >{{ $station->data_download_link ?? '-' }}</a> </div>");
+            marker.bindPopup("<div class='bg-green-500 text-white font-bold p-3 text-center rounded'>{{ $station->pnum ?? '-' }}</div><div class='text-green-900 mt-2'>Location:-  {{ $station->sitestate ?? '-' }}</div><div class='text-green-900 mt-1'>MC:-  {{ $station->multi_types ?? '-' }}</div><div class='text-green-900 mt-1'>Data link:<a  class='text-green-900 hover:text-green-700' href='{{ $station->data_download_link ?? route('cors.index') }}' target='_blank' >{{ $station->data_download_link ?? '-' }}</a> </div>");
             @endif
 
             @endforeach
