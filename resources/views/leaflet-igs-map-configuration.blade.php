@@ -65,7 +65,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             
             @foreach($stations as $station)
             var marker = L.marker([{{ $station->latitude }}, {{ $station->longitude }}],{icon: satelliteIcon}).addTo(map);
-            marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->name }}</div><div class='text-success'>Receiver: {{ $station->receiver_name }}</div><div class='text-success'>RSS: {{ $station->receiver_satellite_system }}</div><div class='text-success'>Antena: {{ $station->antenna_name }}</div><div class='text-success'>Clock: {{ $station->clock_type }}</div>");
+            @if(request()->routeIs('igs.index'))
+            marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->name }}</div><div class='text-success'>Location: {{ $station->country ?? '-' }}</div><div class='text-success'>MC: {{ $station->receiver_satellite_system ?? '-' }}</div><div class='text-success'>Data link:<a href='{{ $station->data_download_link ?? route('igs.index') }}' >{{ $station->data_download_link ?? '-' }}</a> </div>");
+            @endif
+            @if(request()->routeIs('cors.index'))
+            marker.bindPopup("<div style='color: #fff;font-weight:bolder;padding:3px;' class='bg-green-500 text text-success text-center'>{{ $station->pnum ?? '-' }}</div><div class='text-success'>Location: {{ $station->sitestate ?? '-' }}</div><div class='text-success'>MC: {{ $station->multi_types ?? '-' }}</div><div class='text-success'>Data link:<a href='{{ $station->data_download_link ?? route('cors.index') }}' >{{ $station->data_download_link ?? '-' }}</a> </div>");
+            @endif
 
             @endforeach
 
