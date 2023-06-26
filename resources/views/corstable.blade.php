@@ -41,6 +41,13 @@
                     $i = 1;
                 @endphp
                 @forelse ($corsstations as $station)
+            @php
+                if (strpos($station->date_installed, '/') !== false) {
+                    $date_installed = $station->date_installed;
+                } else {
+                    $date_installed = date('d/m/Y', $value);
+                }
+            @endphp
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td >{{ $i++ }}</td>
                     <td class="px-6 py-4">{{ $station->pnum ?? '-' }}</td>
@@ -62,7 +69,7 @@
                     <td class="px-6 py-4">{{ $station->data_complete_last_hour ?? '-' }}</td>
                     <td class="px-6 py-4">{{ $station->data_complete_last_day ?? '-' }}</td>
                     <td class="px-6 py-4">{{ $station->status ?? '-' }}</td>
-                    <td class="px-6 py-4">{{ $station->date_installed ?? '-' }}</td>
+                    <td class="px-6 py-4">{{ $date_installed ?? '-' }}</td>
                     <td class="px-6 py-4">{{ $station->last_rinex_data_year ?? '-' }}</td>
                     <td class="px-6 py-4 text-blue-600"><a class="text-blue-600" href="{{ $station->data_download_link ?? '-' }}">{{ $station->data_download_link ?? '-' }}</a></td>
             </tr>
