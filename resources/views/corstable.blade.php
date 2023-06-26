@@ -15,6 +15,7 @@
                     <th scope="col" class="px-6 py-3" >Name</th>
                     <th scope="col" class="px-6 py-3" >Type</th>
                     <th scope="col" class="px-6 py-3" >Station Status</th>
+                    <th scope="col" class="px-6 py-3" >Operation Status</th>
                     <th scope="col" class="px-6 py-3" >city</th>
                     <th scope="col" class="px-6 py-3" >State</th>
                     <th scope="col" class="px-6 py-3" >Region</th>
@@ -22,7 +23,6 @@
                     <th scope="col" class="px-6 py-3" >Longitude</th>
                     <th scope="col" class="px-6 py-3" >Elevation</th>
                     <th scope="col" class="px-6 py-3" >Project</th>
-                    <th scope="col" class="px-6 py-3" >Receiver Date Installed</th>
                     <th scope="col" class="px-6 py-3" >Network</th>
                     <th scope="col" class="px-6 py-3" >Multi types</th>
                     <th scope="col" class="px-6 py-3" >Is real Time</th>
