@@ -45,7 +45,7 @@
                 if (strpos($station->date_installed, '/') !== false) {
                     $date_installed = $station->date_installed;
                 } else {
-                    $date_installed = date('d/m/Y', $value);
+                    $date_installed = date('d/m/Y', $station->date_installed);
                 }
             @endphp
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
