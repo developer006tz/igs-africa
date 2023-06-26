@@ -40,7 +40,5 @@ class Corsstation extends Model
 
     protected $table = 'corstations';
 
-    protected $casts = [
-        'date_installed' => 'date',
-    ];
+    
 }
