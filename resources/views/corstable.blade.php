@@ -30,7 +30,7 @@
                     <th scope="col" class="px-6 py-3" >Mean Latency Last Day</th>
                     <th scope="col" class="px-6 py-3" >Data complete Last Hour</th>
                     <th scope="col" class="px-6 py-3" >Data complete Last Day</th>
-                    <th scope="col" class="px-6 py-3" >Satus</th>
+                    <th scope="col" class="px-6 py-3" >Status</th>
                     <th scope="col" class="px-6 py-3" >Date installed</th>
                     <th scope="col" class="px-6 py-3" >Last Rinex Data Year</th>
                     <th scope="col" class="px-6 py-3" >Data Download Link</th>
