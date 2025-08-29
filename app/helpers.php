@@ -1,5 +1,4 @@
 <?php
-//this is laravel helper file created in App/Helpers.php
 
 use Illuminate\Support\Str;
 
