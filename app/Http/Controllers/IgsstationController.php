@@ -114,21 +114,6 @@ class IgsstationController extends Controller
                     $count_invalid++;
                 }
             }
-            // if (count($invalidNames) > 0) {
-            //     $invalidNamesStr = implode(', ', array_map(function ($index) use ($stations) {
-            //         return '"' . $stations[$index] . '", at row ' . ($index + 2);
-            //     }, $invalidNames));
-
-            //     if (count($invalidNames) == 1) {
-            //         $errorMessage = "In Your Uploaded Sheet you have " . $count_invalid . " Stations which  EXIST in your system it have value" . $invalidNamesStr . " , of your Uploaded Excel sheet , make sure you Upload new Stations which does not Exists in your System";
-            //     } else {
-            //         $errorMessage = "In Your Uploaded Sheet you have " . $count_invalid . " Stations which  EXIST in your system they have values of " . $invalidNamesStr . " , of your Uploaded Excel sheet ,  make sure you Upload new Stations which does not Exists in your System";
-            //     }
-
-
-            //     return redirect()->route('igsstations.create_excel')->with('error', $errorMessage);
-            //     exit;
-            // }
 
             // end validate
             $added_stations = 0;

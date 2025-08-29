@@ -30,7 +30,17 @@ function checkKeysExists($value, $keys_array)
     {
 
         $required = $keys_array;
-        $data = array_change_key_case(array_shift($value), CASE_LOWER);
+        
+        if (empty($value) || !is_array($value)) {
+            return 'No data provided or invalid data format';
+        }
+        
+        $first_row = array_shift($value);
+        if (empty($first_row) || !is_array($first_row)) {
+            return 'First row is empty or invalid';
+        }
+        
+        $data = array_change_key_case($first_row, CASE_LOWER);
     // Trim the keys of the $data array
         $keys = array_map('trim', array_keys($data));
 
